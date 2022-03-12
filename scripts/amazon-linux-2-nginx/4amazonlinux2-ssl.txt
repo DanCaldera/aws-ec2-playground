@@ -61,3 +61,7 @@ add_header Strict-Transport-Security “max-age=15768000” always;
 All we’re doing here is essentially redirecting all traffic from port 80 (HTTP) to port 443 (HTTPS). Then we’re setting it up so the eventual Node server on port 3000 becomes the final destination. We’re also using HTTP2 which you can learn more about here.
 And to reload the new config file:
 sudo nginx -s reload
+
+
+reference:
+https://blog.cloudboost.io/setting-up-an-https-sever-with-node-amazon-ec2-nginx-and-lets-encrypt-46f869159469

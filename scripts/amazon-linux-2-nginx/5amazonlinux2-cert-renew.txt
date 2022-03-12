@@ -1,0 +1,2 @@
+0 8 12 */3 * certbot renew
+10 8 12 */3 * service nginx restart

@@ -2,3 +2,7 @@ Para iniciar nginx si se hizo un reboot de la instancia
 correr
 
 sudo service nginx start
+
+sudo service nginx restart
+
+sudo service nginx stop

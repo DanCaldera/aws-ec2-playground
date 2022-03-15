@@ -8,4 +8,4 @@ def hello_flask():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='13.56.185.213', port=5001)
+    app.run(debug=True, host='0.0.0.0')

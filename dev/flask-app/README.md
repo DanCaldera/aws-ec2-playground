@@ -10,3 +10,7 @@
 
 - docker stop bbf
 - docker system prune
+
+or just
+
+docker-compose up

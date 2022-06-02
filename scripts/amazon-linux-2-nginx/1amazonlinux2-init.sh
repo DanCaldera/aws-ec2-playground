@@ -2,6 +2,10 @@
 
 echo Actualización de paquetes:
 sudo yum update -y
+
+echo install nodejs
+curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
+sudo yum install -y nodejs
  
 echo Instalar git en tu instancia de EC2
 sudo yum install git -y

@@ -31,3 +31,12 @@ Now restart the Nginx server to apply the changes:
 $ sudo service nginx restart
 
 api.playground.com.mx
+
+
+extras:
+
+http: {
+...
+client_max_body_size 100M;
+...
+}

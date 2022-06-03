@@ -14,10 +14,10 @@ echo Revisar la versión de git
 git version
 
 echo Instalar pm2
-npm install pm2 -g
+sudo npm install pm2 -g
 
 echo Instalar yarn
-npm install yarn -g
+sudo npm install yarn -g
 
 echo Instalar NginX
 sudo amazon-linux-extras install rust1

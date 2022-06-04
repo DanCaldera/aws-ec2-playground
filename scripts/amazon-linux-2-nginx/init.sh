@@ -20,7 +20,7 @@ echo Instalar yarn
 sudo npm install yarn -g
 
 echo Instalar NginX
-sudo amazon-linux-extras install rust1
+sudo amazon-linux-extras install rust1 -y
 
 echo Revisar la versión instalada de linux
 cat /etc/os-release

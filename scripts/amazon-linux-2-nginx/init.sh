@@ -26,8 +26,44 @@ echo Revisar la versión instalada de linux
 cat /etc/os-release
 
 echo Agrega archivo de configuración de Nginx
-sudo echo "[nginx]
+echo '[nginx]
 name=nginx repo
 baseurl=https://nginx.org/packages/centos/7/$basearch/
 gpgcheck=0
-enabled=1" > /etc/yum.repos.d/nginx.repo
+enabled=1' | sudo tee --append /etc/yum.repos.d/nginx.repo
+
+echo Instalar Nginx
+sudo yum install nginx -y
+
+echo Revisar la versión de nginx 
+nginx -v
+
+echo Iniciar NginX
+sudo service nginx start
+
+echo Añadir carpeta sites-enables in nginx.conf
+sudo sed -i '15 i include /etc/nginx/sites-enabled/*;' /etc/nginx/nginx.conf
+
+echo Crear archivo default en carpeta sites-enabled
+sudo mkdir /etc/nginx/sites-enabled
+sudo touch /etc/nginx/sites-enabled/default
+
+echo Añadir info de configuración default para nginx con el puerto 3000
+echo "server {
+   listen         80 default_server;
+   listen         [::]:80 default_server;
+   server_name    localhost;
+   root           /usr/share/nginx/html;
+location / {
+       proxy_pass http://127.0.0.1:3000;
+       proxy_http_version 1.1;
+       proxy_set_header Upgrade \$http_upgrade;
+       proxy_set_header Connection 'upgrade';
+       proxy_set_header Host \$host;
+       proxy_cache_bypass \$http_upgrade;
+   }
+}" | sudo tee --append /etc/nginx/sites-enabled/default
+
+echo Reiniciar nginx
+sudo service nginx restart
+

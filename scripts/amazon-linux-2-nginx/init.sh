@@ -48,14 +48,15 @@ echo Crear archivo default en carpeta sites-enabled
 sudo mkdir /etc/nginx/sites-enabled
 sudo touch /etc/nginx/sites-enabled/default
 
-echo Añadir info de configuración default para nginx con el puerto 3000
+echo Elegir el puerto donde se leerá la aplicación (3000 default)
+read port_nginx_conf
 echo "server {
    listen         80 default_server;
    listen         [::]:80 default_server;
    server_name    localhost;
    root           /usr/share/nginx/html;
 location / {
-       proxy_pass http://127.0.0.1:3000;
+       proxy_pass http://127.0.0.1:$port_nginx_conf;
        proxy_http_version 1.1;
        proxy_set_header Upgrade \$http_upgrade;
        proxy_set_header Connection 'upgrade';

@@ -48,7 +48,7 @@ echo Crear archivo default en carpeta sites-enabled
 sudo mkdir /etc/nginx/sites-enabled
 sudo touch /etc/nginx/sites-enabled/default
 
-echo Elegir el puerto donde se leerá la aplicación (3000 default)
+echo Elegir el puerto donde se leerá la aplicación 3000 default
 read port_nginx_conf
 echo "server {
    listen         80 default_server;

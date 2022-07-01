@@ -21,7 +21,6 @@ UPLOAD_FOLDER = '/'
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
-    print(cwd)
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
@@ -40,7 +39,7 @@ def upload_file():
         elif file and 'audio' in file.mimetype:
             try:
                 converted_file = cwd + '/' + str(uuid4()) + ".mp3"
-                song = AudioSegment.from_fil(file)
+                song = AudioSegment.from_file(file)
                 # Save Converted File
                 song.export(converted_file, format="mp3")
                 return redirect('/')

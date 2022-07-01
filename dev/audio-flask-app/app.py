@@ -34,12 +34,14 @@ def upload_file():
             return redirect('/')
     return '''
     <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
+    <body style="background-color:black;">
+        <title">Audio Conversor</title>
+        <h1 style="color:white;">Audio Conversor</h1>
+        <form method=post enctype=multipart/form-data>
+        <input type=file name=file>
+        <input type=submit value=Upload>
+        </form>
+    </body>
     '''
 
 

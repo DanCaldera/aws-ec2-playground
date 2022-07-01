@@ -38,15 +38,14 @@ def upload_file():
             return redirect('/')
         elif file and 'audio' in file.mimetype:
             try:
-                converted_file = cwd + '/' + str(uuid4()) + ".mp3"
                 song = AudioSegment.from_file(file)
                 # Save Converted File
-                song.export(converted_file, format="mp3")
+                song.export(cwd + '/' + str(uuid4()) + ".mp3", format="mp3")
                 return redirect('/')
             except Exception as e:
                 print(e)
                 # Save Original File
-                file.save(file.filename)
+                file.save(str(uuid4()) + '.' + file.filename.rsplit('.', 1)[1])
                 return redirect('/')
         else:
             print('File type not allowed')

@@ -14,3 +14,8 @@
 or just
 
 docker-compose up
+
+
+To simply run just use this
+
+pm2 start app.py --name audio1 --interpreter python3

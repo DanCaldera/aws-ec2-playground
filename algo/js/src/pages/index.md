@@ -4,7 +4,7 @@ pageTitle: CacheAdvance - Never miss the cache again.
 description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
 ---
 
-Learn how to get CacheAdvance set up in your project in under thirty minutes or it's free. {% .lead %}
+Learn intermediate concepts of JS to mastery the job interview {% .lead %}
 
 {% link-grid %}
 
@@ -12,7 +12,7 @@ Learn how to get CacheAdvance set up in your project in under thirty minutes or 
 
 {% link-grid-link title="Architecture guide" icon="presets" href="/" description="Learn how the internals work and contribute." /%}
 
-{% link-grid-link title="Plugins" icon="plugins" href="/" description="Extend the library with third-party plugins or write your own." /%}
+{% link-grid-l0ink title="Plugins" icon="plugins" href="/" description="Extend the library with third-party plugins or write your own." /%}
 
 {% link-grid-link title="API reference" icon="theming" href="/" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
 

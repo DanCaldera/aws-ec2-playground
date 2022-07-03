@@ -1,5 +1,5 @@
 ---
-title: Predicting user behavior
+title: Objects
 description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 

@@ -11,13 +11,13 @@ const navigation = [
     title: 'Introduction',
     links: [
       { title: 'Getting started', href: '/' },
-      { title: 'Installation', href: '/docs/installation' },
+      // { title: 'Installation', href: '/docs/installation' },
     ],
   },
   {
     title: 'Core concepts',
     links: [
-      { title: 'Understanding caching', href: '/docs/understanding-caching' },
+      { title: 'What is OOP', href: '/docs/understanding-caching' },
       {
         title: 'Predicting user behavior',
         href: '/docs/predicting-user-behavior',

@@ -3,19 +3,10 @@ sudo amazon-linux-extras install epel
 sudo yum repolist
 sudo tee /etc/yum.repos.d/pgdg.repo<<EOF
 
-# For 64-bit CPU architecture instance:
+sudo tee /etc/yum.repos.d/pgdg.repo<<EOF
 [pgdg14]
 name=PostgreSQL 14 for RHEL/CentOS 7 - x86_64
 baseurl=http://download.postgresql.org/pub/repos/yum/14/redhat/rhel-7-x86_64
-enabled=1
-gpgcheck=0
-EOF
-
-# For Graviton 2 (ARM64) EC2 instance:
-sudo tee /etc/yum.repos.d/pgdg.repo<<EOF
-[pgdg14]
-name=PostgreSQL 14 for RHEL/CentOS 7 - ARM64
-baseurl=http://download.postgresql.org/pub/repos/yum/14/redhat/rhel-7-aarch64
 enabled=1
 gpgcheck=0
 EOF
@@ -38,13 +29,12 @@ psql -U postgres -c "CREATE ROLE amazon;"
 psql -U postgres -c "ALTER ROLE  amazon  WITH LOGIN;"
 psql -U postgres -c "ALTER USER  amazon  CREATEDB;"
 psql -U postgres -c "ALTER USER  amazon  WITH PASSWORD 'password';"
-exit
 
 postgres=# ALTER USER postgres PASSWORD 'password';
 
-postgres=# CREATE DATABASE testdb;
+postgres=# CREATE DATABASE public;
 
-Sudo find / -name "postgresql.conf"
+sudo find / -name "postgresql.conf"
 
 Vim that file and uncomment line of listen_addresses and set
 
